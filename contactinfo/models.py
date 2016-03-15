@@ -1,7 +1,7 @@
 from django.db import models
 from django.conf import settings
 
-from django_countries import models as countries
+from django_countries.fields import CountryField
 
 
 class LocationType(models.Model):
@@ -17,14 +17,14 @@ def get_default_locationtype():
     return LocationType.objects.get(slug=default_slug).pk
 
 
-def get_default_country():
-    default_iso = getattr(settings, 'DEFAULT_COUNTRY_ISO', 'US')
-    return countries.Country.objects.get(iso=default_iso).pk
+# def get_default_country():
+#     default_iso = getattr(settings, 'DEFAULT_COUNTRY_ISO', 'US')
+#     return countries.Country.objects.get(iso=default_iso).pk
 
 
 class Location(models.Model):
     type = models.ForeignKey(LocationType, default=get_default_locationtype)
-    country = models.ForeignKey(countries.Country, default=get_default_country)
+    country = models.ForeignKey(CountryField(())
 
     def __unicode__(self):
         return '%s (%s)' % (self.country, self.type)
