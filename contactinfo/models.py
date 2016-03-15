@@ -24,7 +24,8 @@ def get_default_locationtype():
 
 class Location(models.Model):
     type = models.ForeignKey(LocationType, default=get_default_locationtype)
-    country = models.ForeignKey(CountryField())
+    country_field = CountryField()
+    country = models.ForeignKey(country_field)
 
     def __unicode__(self):
         return '%s (%s)' % (self.country, self.type)
