@@ -1,7 +1,7 @@
 from django.db import models
 from django.conf import settings
 
-from countries import models as countries
+from django_countries import models as countries
 
 
 class LocationType(models.Model):
