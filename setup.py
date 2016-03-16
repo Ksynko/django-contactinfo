@@ -7,7 +7,7 @@ setup(
     author='Caktus Consulting Group',
     author_email='solutions@caktusgroup.com',
     packages=find_packages(),
-    install_requires = ['Django >= 1.1,==dev',],
+    install_requires = ['Django==1.7.10,==dev',],
     include_package_data = True,
     exclude_package_data={
         '': ['*.sql', '*.pyc', '*.json',],
