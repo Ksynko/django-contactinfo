@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='django-contactinfo',
-    version='0.0.0',
+    version='1.0.0',
     author='Caktus Consulting Group',
     author_email='solutions@caktusgroup.com',
     packages=find_packages(),
